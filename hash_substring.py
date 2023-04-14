@@ -6,7 +6,7 @@ def read_input():
     input_type = input().rstrip()
 
     if input_type == 'F':
-        with open('inout.txt') as f:
+        with open('input.txt') as f:
             pattern = f.readline().rstrip()
             text = f.readline().rstrip()
     else:
@@ -35,7 +35,7 @@ def get_occurrences(pattern, text):
     p_hash = hash(pattern)
     t_hash = hash(text[:p_len])
 
-    for i in range(t_len - p_len +1):
+    for i in range(t_len - p_len + 1):
         if p_hash == t_hash:
             if pattern == text[i:i+p_len]:
                 occurrences.append(i)
