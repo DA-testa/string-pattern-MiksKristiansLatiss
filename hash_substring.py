@@ -32,15 +32,15 @@ def get_occurrences(pattern, text):
     occurrences = []
     p_len = len(pattern)
     t_len = len(text)
-    p_hash = hash(pattern)
-    t_hash = hash(text[:p_len])
+    p_hash = sum(ord(pattern[i]) * (101 ** i) for i in range (p_len))
+    t_hash = sum(ord(text[i]) * (101 ** i) for i in range(p_len))
 
     for i in range(t_len - p_len + 1):
         if p_hash == t_hash:
             if pattern == text[i:i+p_len]:
                 occurrences.append(i)
         if i < t_len - p_len:
-            t_hash = hash(text[i+1:i+p_len+1], t_hash, text[i])
+            t_hash = (t_hash - ord(text[i]) * (101 ** (p_len - 1))) * 101 + ord(text[i + p_len])
     # and return an iterable variable
     return occurrences
 
