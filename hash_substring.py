@@ -6,7 +6,8 @@ def read_input():
     input_type = input().rstrip()
 
     if input_type == 'F':
-        with open('input.txt') as f:
+        file_name = input().rstrip()
+        with open(file_name) as f:
             pattern = f.readline().rstrip()
             text = f.readline().rstrip()
     else:
