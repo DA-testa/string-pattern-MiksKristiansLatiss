@@ -3,15 +3,12 @@
 def read_input():
     # this function needs to aquire input both from keyboard and file
     # as before, use capital i (input from keyboard) and capital f (input from file) to choose which input type will follow
-    input_type = input().rstrip()
+    input_type, *lines = map(str.strip, open(īnput.txt'))
 
     if input_type == 'F':
-        with open('input.txt') as f:
-            pattern = f.readline().rstrip()
-            text = f.readline().rstrip()
+        pattern, text = lines
     else:
-        pattern = input().rstrip()
-        text = input().rstrip()
+        pattern, text = lines[0], input().strip()
     
     # after input type choice
     # read two lines 
