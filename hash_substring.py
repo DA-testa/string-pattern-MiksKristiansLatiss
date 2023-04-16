@@ -25,9 +25,9 @@ def read_input():
     # return both lines in one return
     
     # this is the sample return, notice the rstrip function
-    return (pattern, text)
+    return pattern, text
 
-def print_occurrences(output):
+def print_occurrences(occurrences):
     # this function should control output, it doesn't need any return
     print(*occurrences)
 
@@ -38,7 +38,7 @@ def get_occurrences(pattern, text):
     p = 10**9 + 7
     x = 263
     h = pow(x, q-1, p)
-    pattern_hash = sum(ord(pattern[i])* pow(x, i, p) for i in range(q)) % p
+    pattern_hash = sum(ord(pattern[i]) * pow(x, i, p) for i in range(q)) % p
     text_hash = sum(ord(text[i]) * pow(x, i, p) for i in range(q)) % p
     occurrences = []
 
