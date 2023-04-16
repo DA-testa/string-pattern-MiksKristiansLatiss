@@ -30,7 +30,7 @@ def read_input():
 def print_occurrences(occurrences):
     # this function should control output, it doesn't need any return
     if occurrences:
-        print(*occurrences)
+        print(" ".join(str(x) for x in occurrences))
     else:
         print()
 
