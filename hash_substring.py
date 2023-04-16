@@ -10,9 +10,11 @@ def read_input():
         with open(file_name) as f:
             pattern = f.readline().rstrip()
             text = f.readline().rstrip()
-    else:
+    elif input_type == 'I':
         pattern = input().rstrip()
         text = input().rstrip()
+    else:
+        return
     
     # after input type choice
     # read two lines 
