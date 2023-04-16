@@ -9,11 +9,11 @@ def read_input():
         input_file = "06"
         input_file = "tests/" + input_file
         with open(input_file) as f:
-            pattern = f.readline().strip()
-            text = f.readline().strip()
+            pattern = f.readline().rstrip()
+            text = f.readline().rstrip()
     elif input_type == 'I':
-        pattern = input().strip()
-        text = input().strip()
+        pattern = input().rstrip()
+        text = input().rstrip()
     else:
         return None
     
